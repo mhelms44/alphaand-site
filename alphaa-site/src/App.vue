@@ -17,13 +17,6 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2">Spotify</span>
-      </v-btn>
-            <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
         <span class="mr-2">Facebook</span>
       </v-btn>
             <v-btn
@@ -31,21 +24,35 @@
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2">Youtube</span>
-      </v-btn>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Merch</span>
+        <span class="mr-2">Instagram</span>
       </v-btn>
             <v-btn
         text
         href="https://github.com/vuetifyjs/vuetify/releases/latest"
         target="_blank"
       >
-        <span class="mr-2">Instagram</span>
+        <span class="mr-2">Discord</span>
+      </v-btn>
+            <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Spotify</span>
+      </v-btn>
+      <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">YouTube</span>
+      </v-btn>
+            <v-btn
+        text
+        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        target="_blank"
+      >
+        <span class="mr-2">Merch</span>
       </v-btn>
     </v-app-bar>
 
