@@ -6,10 +6,10 @@
         >
               <v-flex xs12>
         <v-img
-          :src="require('../../public/aalogo.png')"
+          :src="require('../../public/gaze.jpg')"
           class="my-3"
           contain
-          height="500"
+          height="900"
         ></v-img>
       </v-flex>
 
