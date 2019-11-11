@@ -3,34 +3,10 @@
     <v-toolbar>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn text href="https://alphaandromeda.bandcamp.com/releases" target="_blank">
-          <span class="mr-2">BandCamp</span>
-        </v-btn>
-        <v-btn text href="https://www.facebook.com/alphaandromedaband" target="_blank">
-          <span class="mr-2">Facebook</span>
-        </v-btn>
-        <v-btn text href="https://www.instagram.com/alphaandromedaband/" target="_blank">
-          <span class="mr-2">Instagram</span>
-        </v-btn>
-        <v-btn text href="https://discord.gg/wcUUZv5" target="_blank">
-          <span class="mr-2">Discord</span>
-        </v-btn>
-        <v-btn
-          text
-          href="https://open.spotify.com/artist/44Imd1962FI94frqkxG1rK?si=mqFo84CnQZ-PLhTyTr5dFQ"
-          target="_blank"
-        >
-          <span class="mr-2">Spotify</span>
-        </v-btn>
-        <v-btn text href="https://www.youtube.com/channel/UC9IFkuLhrSLkGNDrE0h3GWw" target="_blank">
-          <span class="mr-2">YouTube</span>
-        </v-btn>
-        <v-btn text href="https://alphaandromeda.bigcartel.com/" target="_blank">
-          <span class="mr-2">Merch</span>
-        </v-btn>
+        <v-list-item v-for="(item, index) in items" :key="index">
+          <v-btn text :href="item.href">{{ item.title}}</v-btn>
+        </v-list-item>
       </v-toolbar-items>
-
-      <!--Sets up smaller viewport menu to be replaced with hamburger eventually-->
 
       <v-toolbar-items class="hidden-md-and-up">
         <v-menu
@@ -51,10 +27,8 @@
             </div>
           </template>
           <v-list>
-            <v-list-item v-for="(item, index) in items" :key="index" @click>
-              <v-list-item-title>
-                <a color="red" :href="item.href">{{ item.title }}</a>
-              </v-list-item-title>
+            <v-list-item v-for="(item, index) in items" :key="index">
+            <v-btn text :href="item.href">{{ item.title}}</v-btn>
             </v-list-item>
           </v-list>
         </v-menu>
