@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <v-toolbar>
+    <v-toolbar
+    :height="50">
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-list-item v-for="(item, index) in items" :key="index">
