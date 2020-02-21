@@ -19,7 +19,6 @@
         </h1>
         <p class="subheading font-weight-regular">
           Stream us on Spotify or your favorite streaming platform.
-          <br><a href="https://www.facebook.com/events/2409154639347786/">Catch us at The Maywood in Raleigh, NC 2/14/2020</a>
         </p>
       </v-flex>
         </v-layout>
