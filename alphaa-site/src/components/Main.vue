@@ -57,12 +57,26 @@
               </div>
 
               <v-avatar
-                class="ma-3"
+                class="hidden-sm-and-down"
                 size="250"
                 tile
               >
                 <v-img :src="item.src"></v-img>
+
               </v-avatar>
+              <v-avatar
+                class="d-none d-sm-flex d-md-none"
+                size="150"
+                tile
+              >
+                <v-img :src="item.src"></v-img>
+              </v-avatar>
+
+              <v-avatar
+                class="d-flex d-sm-none"
+              >
+              </v-avatar>
+              
             </div>
           </v-card>
         </v-col>
