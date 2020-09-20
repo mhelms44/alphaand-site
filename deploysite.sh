@@ -6,8 +6,11 @@
 # Which is also why my prod server runs Arch btw
 
 cd /home/michael/staging/alphaand-site
-git pull
+git fetch --all
+git reset --hard origin/master
 cd alphaa-site/
+npm install >&1
+npm update >&1
 npm run build >&1
 rm -rf /home/michael/site/img
 rm -rf /home/michael/site/css
