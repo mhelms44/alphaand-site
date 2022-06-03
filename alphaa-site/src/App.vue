@@ -80,6 +80,11 @@ export default {
         href: "https://www.youtube.com/channel/UC9IFkuLhrSLkGNDrE0h3GWw"
       },
       {
+        title: "Press Kit",
+        href:
+          "../../presskit"
+      },
+      {
         title: "Merch",
         href: "https://alphaandromeda.bigcartel.com/"
       }
