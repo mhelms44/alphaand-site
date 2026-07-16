@@ -4,68 +4,556 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alpha Andromeda | Press Kit</title>
+  <meta name="description"
+    content="Booking and electronic press kit for Alpha Andromeda, a four-piece metal band from North Carolina.">
+  <title>Alpha Andromeda | Booking / EPK</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <style>
+    :root {
+      --aa-purple: #ab3c5b;
+      --aa-plum: #5e3562;
+      --aa-blue: #1b2732;
+      --aa-ink: #0b1017;
+      --aa-card: rgba(255, 255, 255, 0.075);
+      --aa-line: rgba(255, 255, 255, 0.18);
+    }
+
+    body {
+      background:
+        radial-gradient(circle at top left, rgba(171, 60, 91, 0.35), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(94, 53, 98, 0.32), transparent 30rem),
+        var(--aa-ink);
+      color: #f5f2f6;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: #f6b5c8;
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 4rem 0;
+    }
+
+    .eyebrow {
+      color: #f6b5c8;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .display-1 {
+      letter-spacing: -0.06em;
+      line-height: 0.92;
+    }
+
+    .lead {
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 52rem;
+    }
+
+    .aa-card {
+      background: var(--aa-card);
+      border: 1px solid var(--aa-line);
+      border-radius: 1.25rem;
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.22);
+    }
+
+    .hero-photo {
+      border: 1px solid var(--aa-line);
+      border-radius: 1.25rem;
+      box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.38);
+      object-fit: cover;
+    }
+
+    .logo-card {
+      background: linear-gradient(135deg, rgba(171, 60, 91, 0.24), rgba(27, 39, 50, 0.8));
+      border: 1px solid var(--aa-line);
+      border-radius: 1.25rem;
+    }
+
+    .btn-aa {
+      --bs-btn-color: #fff;
+      --bs-btn-bg: var(--aa-purple);
+      --bs-btn-border-color: var(--aa-purple);
+      --bs-btn-hover-color: #fff;
+      --bs-btn-hover-bg: #c04668;
+      --bs-btn-hover-border-color: #c04668;
+      --bs-btn-focus-shadow-rgb: 171, 60, 91;
+    }
+
+    .btn-outline-aa {
+      --bs-btn-color: #fff;
+      --bs-btn-border-color: rgba(255, 255, 255, 0.42);
+      --bs-btn-hover-color: #0b1017;
+      --bs-btn-hover-bg: #fff;
+      --bs-btn-hover-border-color: #fff;
+    }
+
+    .section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      color: #fff;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .quick-fact {
+      border-bottom: 1px solid var(--aa-line);
+      padding: 0.8rem 0;
+    }
+
+    .quick-fact:last-child {
+      border-bottom: 0;
+    }
+
+    .quick-fact span {
+      color: rgba(255, 255, 255, 0.62);
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ratio iframe,
+    .spotify-frame {
+      border: 0;
+      border-radius: 1rem;
+      width: 100%;
+    }
+
+    .release-card {
+      height: 100%;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .release-card:hover {
+      border-color: rgba(246, 181, 200, 0.65);
+      transform: translateY(-3px);
+    }
+
+    .download-link {
+      align-items: center;
+      border: 1px solid var(--aa-line);
+      border-radius: 1rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      text-decoration: none;
+    }
+
+    .download-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .asset-card {
+      height: 100%;
+    }
+
+    .asset-preview {
+      align-items: center;
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid var(--aa-line);
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+      min-height: 13rem;
+      overflow: hidden;
+      padding: 1rem;
+    }
+
+    .asset-preview img {
+      max-height: 11rem;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .asset-preview.photo {
+      padding: 0;
+    }
+
+    .asset-preview.photo img {
+      aspect-ratio: 4 / 3;
+      height: 100%;
+      max-height: none;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .asset-note {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .contact-email {
+      align-items: center;
+      color: rgba(255, 255, 255, 0.82);
+      display: flex;
+      gap: 0.65rem;
+    }
+
+    .contact-email-icon {
+      color: #f6b5c8;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--aa-line);
+      color: rgba(255, 255, 255, 0.65);
+      padding: 2rem 0;
+    }
+  </style>
 </head>
 
-<body class="p-3 mb-2 bg-dark text-white">
-  <div class="container">
-    <h1 class="text-center py-3 display-3">Press Kit</h1>
-    <h4>About Alpha Andromeda</h4>
-    <p class="lead">Do you look up at the night sky and feel homesick?
-      Do you feel morose when you think about all the people you have to share this planet with?
-      Perhaps you spend an unhealthy amount of time fantasizing about that Volvo station wagon
-      you saw on Facebook Marketplace? Alpha Andromeda invites listeners to contemplate these topics
-      as they blend tales of cosmic horror, the anguish of existence, and V8 engine swapped drift-wagons
-      into an ethereal gumbo of extra spicy metal. </p>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col ">
-        <p>Alpha Andromeda, based in central North Carolina, was founded in 2019. The band have played in multiple projects together since 2011, and three of the four members went to the same high school. Alpha Andromeda's main goal is to have no limitations to what can be done. No rules, just riffs is a guiding principle for the group who prioritize their vision over alignment with a specific style. The message, obscured beneath the layers of dark themes and aggressive music is ironically a positive affirmation of fun over existential dread. Alpha Andromeda embodies this message by combining foreboding ambience, intricate rhythms, and face-shredding leads soaring high during the crest before crashing down into the depths below. Following the 2019 releases of <em>Gaze Into The Void</em> and <em>Junko</em> the band released <em>A Good Rope and a Strong Branch</em> and <em>Ominous Mechanobiology</em> in 2020. The band is working on an LP with an expected release date of Q1CY23
-          
-        </p>
-        <p><strong><em>Alpha Andromeda is</em></strong>
+<body>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <p class="eyebrow mb-3">North Carolina metal · Booking / EPK</p>
+            <h1 class="display-1 fw-bold mb-4">Alpha Andromeda</h1>
+            <p class="lead fs-3 mb-4">
+              It's like a big cosmic gumbo! 
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-aa btn-lg" href="#listen">Listen</a>
+              <a class="btn btn-outline-aa btn-lg" href="#releases">Releases</a>
+              <a class="btn btn-outline-aa btn-lg" href="#downloads">Press assets</a>
+              <a class="btn btn-outline-aa btn-lg" href="#tech">Stage plot</a>
+              <a class="btn btn-outline-aa btn-lg" href="#contact">Contact</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="logo-card p-4 mb-4 text-center">
+              <img src="../aalogo_current.png" class="img-fluid" alt="Alpha Andromeda full-color logo">
+            </div>
+            <img src="../ps20.jpg" class="img-fluid hero-photo" alt="Alpha Andromeda band photo">
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <ul class="list-unstyled">
-          <li class="justify-content-between align-items-center bg-dark text-white">
-            Michael Helms - Guitar
-            🎸
-          </li>
-          <li class="justify-content-between align-items-center bg-dark text-white">
-            Jordan "Snazz" Taylor - Guitar
-            🎸
-          </li>
-          <li class="justify-content-between align-items-center bg-dark text-white">
-            Garrett Jones - Vocals
-            🎤
-          </li>
-          <li class="justify-content-between align-items-center bg-dark text-white">
-            Jordan Goldston - Drums
-            🥁
-          </li>
-        </ul>
-        </p>
-        <img src="../ps20.jpg" class="img-fluid py-4" alt="alphaand band">
+    <section class="section pt-0" id="about">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="aa-card p-4 p-md-5 h-100">
+              <h2 class="section-title mb-4">Bio</h2>
+              <p>
+              Alpha Andromeda is a four-piece progressive metal band from [CITY], North Carolina, pairing down-tuned riffs and technical grooves with electronic textures, abrupt transitions, and an offbeat sci-fi streak. The result is heavy, tightly arranged, and deliberately strange without taking itself too seriously. <br /><br />
+              Formed in 2019, the band has been playing together in one configuration or another since 2011.That history carries into a tightly arranged live set built around heavy riffs, fast transitions, electronic production, and very little standing around.
+              </p>
+              <p class="mb-0">
+                The band has released music independently since its 2019 debut, <em>Gaze Into The Void</em>, most
+                recently <em>Bird Dream Watcher</em>, <em>Primordial Purple</em>, and
+                <em>Do Not Reply To The Beacon</em> in 2025.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="aa-card p-4 p-md-5 h-100">
+              <h2 class="section-title mb-4">Quick info</h2>
+              <div class="quick-fact">
+                <span>Based in</span>
+                Raleigh, North Carolina
+              </div>
+              <div class="quick-fact">
+                <span>Active since</span>
+                2019
+              </div>
+              <div class="quick-fact">
+                <span>Style / genre</span>
+                Progressive Metal / Deathcore
+                </div>
+              <div class="quick-fact">
+                <span>For Fans Of</span>
+                Born of Osiris / Veil Of Maya / Vildhjarta / The Contortionist
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col">
-        <img src="../alphaandlogo.png" class="img-fluid ps-5 ms-5" alt="logo" width="80%">
+    </section>
+
+    <section class="section" id="members">
+      <div class="container">
+        <div class="aa-card p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-4">
+              <h2 class="section-title mb-0">Members</h2>
+            </div>
+            <div class="col-lg-8">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <p class="mb-0"><strong>Michael Helms</strong><br>Guitar</p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="mb-0"><strong>Jordan “Snazz” Taylor</strong><br>Guitar</p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="mb-0"><strong>Garrett Jones</strong><br>Vocals</p>
+                </div>
+                <div class="col-sm-6">
+                  <p class="mb-0"><strong>Jordan Goldston</strong><br>Drums</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="container-sm">
-        <h3>Media</h3>
-        <p>All Alpha Andromeda releases are avaliable for free on BandCamp.
-          Releases are also avaliable on all major streaming platforms
-          including Spotify, Amazon Music, and Apple Music.</p>
-        <iframe src="https://open.spotify.com/embed/artist/44Imd1962FI94frqkxG1rK" width="300" height="380"
-          frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/1H9ddJXJ_1Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          <h3>Connect</h3>
-          Links to social media platforms, music distribution, and merch can be found at <a class="link-secondary" href="https://alphaandromeda.com">Alpha Andromeda's website</a>
-        
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-          crossorigin="anonymous"></script>
+    </section>
+
+    <section class="section" id="listen">
+      <div class="container">
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5">
+            <div class="aa-card p-4 p-md-5 h-100">
+              <h2 class="section-title mb-3">Listen</h2>
+              <p>
+                New to Alpha Andromeda? Start with <strong>Primordial Purple</strong> and <strong>Submit to the Swarm</strong>. Then check out <strong>RLAM</strong> and <strong>Bird Dream Watcher</strong>. The complete catalog is available on Spotify and Bandcamp.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a class="btn btn-aa" href="https://alphaandromeda.bandcamp.com/" target="_blank"
+                  rel="noopener">Bandcamp</a>
+                <a class="btn btn-outline-aa"
+                  href="https://open.spotify.com/artist/44Imd1962FI94frqkxG1rK?si=mqFo84CnQZ-PLhTyTr5dFQ"
+                  target="_blank" rel="noopener">Spotify</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <iframe class="spotify-frame" src="https://open.spotify.com/embed/artist/44Imd1962FI94frqkxG1rK"
+              height="380" allow="encrypted-media" title="Alpha Andromeda on Spotify"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="releases">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between gap-3 mb-4">
+          <div>
+            <h2 class="section-title mb-0">Selected releases</h2>
+          </div>
+          <a class="btn btn-outline-aa align-self-md-end" href="https://alphaandromeda.bandcamp.com/" target="_blank"
+            rel="noopener">View full discography</a>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3">
+            <a class="aa-card release-card d-block p-4 text-decoration-none text-white"
+              href="https://alphaandromeda.bandcamp.com/album/do-not-reply-to-the-beacon" target="_blank"
+              rel="noopener">
+              <p class="eyebrow mb-2">Nov 2025</p>
+              <h3 class="h4">Do Not Reply To The Beacon</h3>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <a class="aa-card release-card d-block p-4 text-decoration-none text-white"
+              href="https://alphaandromeda.bandcamp.com/track/primordial-purple" target="_blank" rel="noopener">
+              <p class="eyebrow mb-2">Oct 2025</p>
+              <h3 class="h4">Primordial Purple</h3>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <a class="aa-card release-card d-block p-4 text-decoration-none text-white"
+              href="https://alphaandromeda.bandcamp.com/track/bird-dream-watcher" target="_blank" rel="noopener">
+              <p class="eyebrow mb-2">Aug 2025</p>
+              <h3 class="h4">Bird Dream Watcher</h3>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-3">
+            <a class="aa-card release-card d-block p-4 text-decoration-none text-white"
+              href="https://alphaandromeda.bandcamp.com/track/submit-to-the-swarm" target="_blank" rel="noopener">
+              <p class="eyebrow mb-2">May 2023</p>
+              <h3 class="h4">Submit to the Swarm</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="downloads">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <div class="col-lg-7">
+            <h2 class="section-title mb-3">Press assets</h2>
+            <p class="lead fs-5">
+              High-resolution photos and transparent PNG logos for show listings, flyers, and social posts. Download
+              files individually or use the complete ZIP archive.
+            </p>
+          </div>
+          <div class="col-lg-5 d-flex align-items-lg-end justify-content-lg-end">
+            <a class="btn btn-aa btn-lg" href="alpha-andromeda-epk-assets.zip" download>
+              Download all assets (ZIP)
+            </a>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-5 g-4">
+          <div class="col">
+            <div class="aa-card asset-card p-4">
+              <div class="asset-preview photo">
+                <img src="../ps20.jpg" alt="Alpha Andromeda band photo preview">
+              </div>
+              <h3 class="h5">Band photo</h3>
+              <p class="asset-note">High-resolution horizontal band photo.</p>
+              <a class="download-link" href="../ps20.jpg" download>
+                <span>Download photo</span>
+                <span>JPG</span>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="aa-card asset-card p-4">
+              <div class="asset-preview">
+                <img src="../aalogo_current.png" alt="Alpha Andromeda full-color logo preview">
+              </div>
+              <h3 class="h5">Full-color logo</h3>
+              <p class="asset-note">Primary color logo for digital use.</p>
+              <a class="download-link" href="../aalogo_current.png" download>
+                <span>Download logo</span>
+                <span>PNG</span>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="aa-card asset-card p-4">
+              <div class="asset-preview">
+                <img src="../aa_new_flat.png" alt="Alpha Andromeda full-band flat logo preview">
+              </div>
+              <h3 class="h5">One-color logo</h3>
+              <p class="asset-note">Full band logo for high-contrast layouts.</p>
+              <a class="download-link" href="../aa_new_flat.png" download>
+                <span>Download full flat</span>
+                <span>PNG</span>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="aa-card asset-card p-4">
+              <div class="asset-preview">
+                <img src="../aalogo_flat.png" alt="Alpha Andromeda flat logo preview">
+              </div>
+              <h3 class="h5">Flat AA mark</h3>
+              <p class="asset-note">One-color compact mark for simple layouts.</p>
+              <a class="download-link" href="../aalogo_flat.png" download>
+                <span>Download AA flat</span>
+                <span>PNG</span>
+              </a>
+            </div>
+          </div>
+          <div class="col">
+            <div class="aa-card asset-card p-4">
+              <div class="asset-preview">
+                <img src="../minilogo.png" alt="Alpha Andromeda mini logo preview">
+              </div>
+              <h3 class="h5">Mini logo</h3>
+              <p class="asset-note">Compact mark for square or limited-space layouts.</p>
+              <a class="download-link" href="../minilogo.png" download>
+                <span>Download mini</span>
+                <span>PNG</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="video">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <h2 class="section-title mb-3">Submit to the Swarm</h2>
+            <p class="lead fs-5 mb-0">Official lyric video for the 2023 single.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/hufkx3mMNv0?si=4AkvQc6wEF6h0iqD"
+                title="Alpha Andromeda — Submit to the Swarm lyric video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="aa-card p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-7">
+              <h2 class="section-title mb-3">Booking and contact</h2>
+              <p class="lead fs-5 mb-0">
+                For show offers, press inquiries, or technical questions, contact the band on Instagram or Facebook,
+                or by email.
+              </p>
+            </div>
+            <div class="col-lg-5">
+              <div class="d-flex flex-column gap-3 align-items-lg-end">
+                <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+                  <a class="btn btn-aa btn-lg" href="https://www.instagram.com/alphaandromedaband/"
+                    target="_blank" rel="noopener">Instagram</a>
+                  <a class="btn btn-outline-aa btn-lg" href="https://www.facebook.com/alphaandromedaband"
+                    target="_blank" rel="noopener">Facebook</a>
+                </div>
+                <div class="contact-email">
+                  <span class="contact-email-icon" aria-hidden="true">✉</span>
+                  <span>alphaandromedaband@gmail.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pt-0" id="tech">
+      <div class="container">
+        <div class="aa-card p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="section-title mb-3">Stage plot and input list</h2>
+              <p class="lead fs-5 mb-0">
+                Current stage layout and input requirements are available as a single file on Google Drive.
+              </p>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-lg-end">
+              <a class="btn btn-outline-aa btn-lg"
+                href="https://drive.google.com/file/d/1MyHCD6QbqHxOu2osXT4SO_96RKxJbSB1/view?usp=sharing"
+                target="_blank" rel="noopener">View on Google Drive</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© Alpha Andromeda</span>
+      <span>North Carolina</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
